@@ -11,17 +11,6 @@ on:
   repository_dispatch:
     types: sync-LXK9301-scripts
 jobs:
-  sync:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: cheny95/git-mirror-action@master
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
-        with:
-          source-repo: "git@gitee.com:lxk0301/jd_scripts.git"
-          source_branch: "master" 
-          destination_branch: "master"
-          github_token: ${{ secrets.PAT } 
   repo-sync:
     env:
       PAT: ${{ secrets.PAT }} #此处PAT需要申请，教程详见：https://www.jianshu.com/p/bb82b3ad1d11
@@ -31,7 +20,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync LXK9301-scripts
+      - name: sync lxk0301-scripts
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
