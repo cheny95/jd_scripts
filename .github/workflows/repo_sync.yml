@@ -16,7 +16,7 @@ jobs:
       PAT: ${{ secrets.PAT }} #此处PAT需要申请，教程详见：https://www.jianshu.com/p/bb82b3ad1d11
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/chan@v1
+      - uses: actions/checkout@v2
         with:
           persist-credentials: false
 
