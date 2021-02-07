@@ -1,5 +1,5 @@
 # File: .github/workflows/repo-sync.yml
-name: sync-LXK9301-scripts
+name: sync-lxk0301-scripts
 on:
   schedule:
     - cron: '1 0,15 * * *'
@@ -9,14 +9,14 @@ on:
   push:
     branches: [ master ]
   repository_dispatch:
-    types: sync-LXK9301-scripts
+    types: sync-lxk0301-scripts
 jobs:
   repo-sync:
     env:
       PAT: ${{ secrets.PAT }} #此处PAT需要申请，教程详见：https://www.jianshu.com/p/bb82b3ad1d11
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/chan@v1
         with:
           persist-credentials: false
 
